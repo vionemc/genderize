@@ -99,10 +99,12 @@ class Genderize(object):
             if not isinstance(decoded, list):
                 decoded = [decoded]
             if not retheader:
-                return self._fixtypes([self._fixtypes(data) for data in decoded])
+                return self._fixtypes(
+                        [self._fixtypes(data) for data in decoded])
             else:
-                return {"data":self._fixtypes([self._fixtypes(data) for data in decoded]),
-                    "headers":response.headers}
+                return {"data": self._fixtypes(
+                    [self._fixtypes(data) for data in decoded]),
+                    "headers": response.headers}
         else:
             raise GenderizeException(decoded['error'], response.status_code)
 
