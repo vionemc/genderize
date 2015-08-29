@@ -37,3 +37,13 @@ def test_invalid_api_key():
     except GenderizeException:
         caught = True
     assert caught, "Expected a GenderizeException to be thrown"
+
+def test_with_headers():
+    """
+    Calls the API server with an invalid API key.
+    Should result in an exception.
+    """
+    headers = None
+    result = Genderize().get('Peter', retheader=True)
+    headers = result['headers']
+    assert headers, "Expected response headers to be returned"
