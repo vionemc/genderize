@@ -100,7 +100,7 @@ class Genderize(object):
                 decoded = [decoded]
             if not retheader:
                 return self._fixtypes(
-                        [self._fixtypes(data) for data in decoded])
+                    [self._fixtypes(data) for data in decoded])
             else:
                 return {"data": self._fixtypes(
                     [self._fixtypes(data) for data in decoded]),
