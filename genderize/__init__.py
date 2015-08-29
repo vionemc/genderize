@@ -103,7 +103,9 @@ class Genderize(object):
                     [self._fixtypes(data) for data in decoded])
             else:
                 return {
-                    "data": self._fixtypes([self._fixtypes(data) for data in decoded]),
+                    "data": self._fixtypes(
+                        [self._fixtypes(data) for data in decoded]
+                    ),
                     "headers": response.headers
                 }
         else:
